@@ -1,6 +1,6 @@
 kind: Namespace
 apiVersion: v1
 metadata:
-  name: dv1
+  name: nginx-simple-prd
   labels:
-    name: development
+    name: production
