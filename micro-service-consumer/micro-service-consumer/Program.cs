@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace micro_service
+namespace micro_service_consumer
 {
     public class Program
     {
@@ -19,10 +19,6 @@ namespace micro_service
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-            .ConfigureLogging(x=> {
-                x.AddConsole();
-                x.AddDebug();
-            })
                 .UseStartup<Startup>();
     }
 }

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: micro-service-consumer-deployment
+  labels:
+    app: website
+spec:
+  replicas: 
+  selector:
+    matchLabels:
+      app: website
+  template:
+    metadata:
+      labels:
+        app: website
+    spec:
+      containers:
+      - name: micro-service-consumer
+        image: stusklinar/micro-service-consumer:latest
+        ports:
+        - containerPort: 80
+        imagePullPolicy: Always

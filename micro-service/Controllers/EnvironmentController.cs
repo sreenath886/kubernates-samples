@@ -12,9 +12,9 @@ namespace micro_service.Controllers
     {
         // GET api/values
         [HttpGet]
-        public string Get()
+        public IActionResult Get()
         {
-            return Environment.MachineName;
+            return Ok($"{Environment.MachineName}");
         }
     }
 }

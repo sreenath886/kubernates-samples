@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: micro-service-deployment
+  labels:
+    app: microservice
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: microservice
+  template:
+    metadata:
+      labels:
+        app: microservice
+    spec:
+      containers:
+      - name: micro-service
+        image: stusklinar/micro-service:latest
+        ports:
+        - containerPort: 80
+        imagePullPolicy: Always
